@@ -33,24 +33,35 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('SQLite CRUD Example')),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.only(top: 50.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () => _goTo(context, const InsertPage()),
-              child: const Text('Insert'),
-            ),
-            ElevatedButton(
-              onPressed: () => _goTo(context, const QueryPage()),
-              child: const Text('Query'),
-            ),
-            ElevatedButton(
-              onPressed: () => _goTo(context, const UpdatePage()),
-              child: const Text('Update'),
-            ),
-            ElevatedButton(
-              onPressed: () => _goTo(context, const DeletePage()),
-              child: const Text('Delete'),
+            Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ElevatedButton(
+                    onPressed: () => _goTo(context, const InsertPage()),
+                    child: const Text('Insert'),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () => _goTo(context, const QueryPage()),
+                    child: const Text('Query'),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () => _goTo(context, const UpdatePage()),
+                    child: const Text('Update'),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () => _goTo(context, const DeletePage()),
+                    child: const Text('Delete'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
